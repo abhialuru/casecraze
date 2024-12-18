@@ -1,20 +1,13 @@
-import { cn } from '@/lib/utils'
-import React, { HTMLAttributes } from 'react'
+import React from 'react'
 
-interface PhoneProps extends HTMLAttributes<HTMLDivElement>{
-    imgSrc: string,
-    dark?: boolean
-}
-
-function Phone({className, imgSrc, dark=false, ...props}:PhoneProps) {
+function Phone({imgSrc}:{imgSrc:string}) {
   return (
-    <div className={cn('relative pointer-events-none overflow-hidden',className)}{...props}>
-         <img src={dark? '/phone-template-dark-edges.png': '/phone-template-white-edges.png'} className='absolute pointer-events-none select-none' alt="" />
-         <div>
-            <img src={imgSrc} alt="" />
-         </div>
-    </div>
+    <>
+                 
+                  <img className="w-40 absolute h-80" src="/phone-template-white-edges.png" alt="" />
+                   <img className="w-40 h-80 object-cover " src={imgSrc} />
+  </>
   )
 }
 
-export default Phone;
+export default Phone
