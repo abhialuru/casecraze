@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Motion from "@/components/Motion";
 import Phone from "@/components/Phone";
@@ -81,9 +82,10 @@ export default function Home() {
          </div>
          </MaxWidthWrapper>
 
-         <div className="bg-slate-100 lg:pt-10 px-2">
            <section>
            <MaxWidthWrapper>
+           <div className="bg-slate-100 lg:pt-10 px-2">
+
                  <div>
                    <h1 className="w-full text-4xl text-balance tracking-tight leading-tight flex justify-center font-bold py-10 underline underline-offset-4 decoration-gray-800">What our customers say</h1>    
                  </div>
@@ -145,15 +147,17 @@ export default function Home() {
                       <div className="w-full h-full hidden select-none md:block">
                          <Motion images={images3}  initialPosition="0"  finalPosition="-100%" duration={40} />
                       </div>
-                      </div>                 
+                      </div>   
+                      </div>              
                    </MaxWidthWrapper>
            </section>
-         </div>
+       
 
 
          <section>
           <MaxWidthWrapper>
-              <div className="max-w-lg mx-auto lg:text-start pt-20">
+            <div className="bg-slate-50 py-20">
+              <div className="max-w-lg mx-auto lg:text-start">
                 <h1 className="text-4xl font-bold tracking-tight text-center text-balance leading-tight">Upload your photo <span className="bg-green-500 text-white">and get your own</span> case</h1>
               </div>
 
@@ -186,10 +190,11 @@ export default function Home() {
                       5 year print warranty
                     </li>
                 </ul>
-                <div className="flex max-w-fit mx-auto mt-10 items-center bg-green-600 text-white p-2 px-3 gap-3 rounded-md">
+                <div className="flex max-w-fit mx-auto mt-10 items-end bg-green-600 text-sm text-white p-2 px-3 gap-3 rounded-md">
                       Create your case now
-                      <ArrowRight className="size-5"/>
+                      <ArrowRight className="size-4"/>
                     </div>
+             </div>
              </div>
           </MaxWidthWrapper>
          </section>
