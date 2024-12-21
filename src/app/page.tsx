@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Motion from "@/components/Motion";
 import Phone from "@/components/Phone";
 import { ArrowRight, Check, Star } from "lucide-react";

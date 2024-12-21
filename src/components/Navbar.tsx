@@ -33,13 +33,15 @@ async function Navbar() {
                 </Link>
             </button> 
             }
-                        <div className='w-px h-8 bg-zinc-200' />
+            <div>
+               <div className='w-px h-8 bg-zinc-200' />
               <button className='flex items-center bg-green-500 text-white p-1 px-2 rounded-lg'>
-                <Link href='/api/auth/upload'>
+                <Link href='/configure/upload'>
                 CreateCase
                 </Link>
                 <ArrowRight className='hidden sm:flex ml-2 size-6 pt-0.5' />
             </button>
+            </div>
             </>
           ) : (
             <>
@@ -54,13 +56,15 @@ async function Navbar() {
                    Login
                 </Link>
             </button>
-            <div className='w-px h-8 bg-zinc-200' />
-            <button className='flex items-center bg-green-500 text-white p-1 px-2 rounded-lg'>
-                <Link href='/api/auth/upload'>
+            
+            <div className='w-px h-8 bg-zinc-200 hidden md:block' />
+            <button className='md:flex items-center bg-green-500 text-white p-1 px-2 rounded-lg hidden'>
+                <Link href='/configure/upload'>
                 CreateCase
                 </Link>
                 <ArrowRight className='hidden sm:flex ml-2 size-6 pt-0.5' />
             </button>
+ 
             </>
           )}
             </div>
