@@ -2,6 +2,7 @@
 import Motion from "@/components/Motion";
 import Phone from "@/components/Phone";
 import { ArrowRight, Check, Star } from "lucide-react";
+import Link from "next/link";
  
  
 export default function Home() {
@@ -51,11 +52,12 @@ export default function Home() {
 
                 <div className="flex justify-center lg:justify-start gap-10 mt-10">
                     <div className="flex -space-x-2">
-                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/user-1.png" alt="" />
-                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/user-2.png" alt="" />
-                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/user-3.png" alt="" />
-                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/user-4.jpg" alt="" />
-                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/user-5.jpg" alt="" />
+                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/indian-user.4.jpg" alt="" />
+                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/indian-user.2.jpg" alt="" />
+                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/indian-user.1.jpg" alt="" />
+                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/indian-user.3.jpg" alt="" />
+                        <img className="size-7 rounded-full object-cover ring-2 ring-slate-50" src="/users/indian-user.5.jpg" alt="" />
+                      
                     </div>
                   
                     <div>
@@ -100,9 +102,9 @@ export default function Home() {
                  <p>"The case feels durable and I even got a comploment on the design. had the case for two and a half months now and <span className="bg-gray-800 text-white">the image is super clear.</span>  on the case i had before, the image started fading into yellow-ish color after a couple weeks. Love it."</p>
 
                  <div className="flex items-end gap-5">
-                  <img className="size-10 rounded-full" src="/users/user-3.png" alt="" />
+                  <img className="size-10 rounded-full" src="/users/indian-user.3.jpg" alt="" />
                   <div>
-                    <h4 className="font-semibold">shyra khan</h4>
+                    <h4 className="font-semibold">Harshad Kumar</h4>
                     <div className="flex gap-2 items-end">
                     <Check className="size-4 stroke-[3px] text-green-600" />
                     <p className="text-sm">Verified Purchase</p>
@@ -120,9 +122,9 @@ export default function Home() {
                   </div>
                   <p>"I ususally keep my phone together with my keys in my pocket and that led to some pretty heavy scratchmarks on all of my last phone cases. This one, besides a barely noticeable scratch on the corner, <span className="bg-gray-800 text-white">looks brand new after about half a year.</span> I dit it."</p>
                  <div className="flex items-end gap-5">
-                  <img className="size-10 rounded-full" src="/users/user-4.jpg" alt="" />
+                  <img className="size-10 rounded-full" src="/users/indian-user.4.jpg" alt="" />
                   <div>
-                    <h4 className="font-semibold">Albert</h4>
+                    <h4 className="font-semibold">Mrunal Thakur</h4>
                     <div className="flex gap-2 items-end">
                     <Check className="size-4 stroke-[3px] text-green-600" />
                     <p className="text-sm">Verified Purchase</p>
@@ -189,10 +191,13 @@ export default function Home() {
                       5 year print warranty
                     </li>
                 </ul>
-                <div className="flex max-w-fit mx-auto mt-10 items-end bg-green-600 text-sm text-white p-2 px-3 gap-3 rounded-md">
+                <Link href='/configure/upload' >
+                <div className="flex max-w-fit mx-auto mt-10 items-end bg-green-500 text-sm text-white p-2 px-3 gap-3 rounded-md">
                       Create your case now
                       <ArrowRight className="size-4"/>
                     </div>
+                </Link>
+               
              </div>
              </div>
           </MaxWidthWrapper>

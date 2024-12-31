@@ -2,7 +2,8 @@ import React from 'react'
 import sharp from 'sharp'
 import { db } from '@/db';
 import { notFound } from 'next/navigation';
- 
+ import ConfigDesign from './ConfigDesign';
+   
 
 interface PropsPage{
     searchParams:{
@@ -12,7 +13,7 @@ interface PropsPage{
 
 async function page({searchParams}: PropsPage) {
 
-     const { url, sessionId } = searchParams;
+     const { url, sessionId } = await searchParams;
 
     const existingRecord = await db.configuration.findUnique({
       where: {
@@ -56,8 +57,9 @@ async function page({searchParams}: PropsPage) {
    
 
   return (
-    <div>{height}</div>
-  )
+     <ConfigDesign sessionId={sessionId} imageUrl={imageUrl} imageDimensions={{height, width}} />
+   )
+
 }
 
 export default page

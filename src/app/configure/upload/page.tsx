@@ -90,7 +90,7 @@ function Home() {
 
                   }
 
-                  {isPending ? null : <p className='text-xs text-zinc-500'>PNG, JPG, JPEG</p> }
+                  {isPending ? null : <p className='text-xs text-zinc-500 mt-2'>PNG, JPG, JPEG</p> }
                 </div>
               
                 }

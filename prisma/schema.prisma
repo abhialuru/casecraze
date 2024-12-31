@@ -8,11 +8,46 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum OrderStatus {
+  fullfilled
+  shipped
+  awaiting_shipment
+}
+
+enum PhoneModel {
+  iphonex
+  iphone11
+  iphone12
+  iphone13
+  iphone14
+  iphone15
+}
+
+enum CaseMaterial {
+  silicone
+  polycorbonate
+}
+
+enum CaseFinish {
+  smooth
+  textured
+}
+
+enum CaseColor {
+  black
+  blue
+  red
+}
  
 model Configuration{
   sessionId String @id @default(uuid())
   width Int
   height Int
   imageUrl String
+  model PhoneModel?
+  material CaseMaterial?  
+  finish CaseFinish?
+  color CaseColor?
   croppedImageUrl String?
 }

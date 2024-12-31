@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import Providers from "@/components/Providers";
  
 export default function RootLayout({
   children,
@@ -15,7 +16,9 @@ export default function RootLayout({
         <Navbar/>
 
         <main className="flex flex-col w-full min-h-[calc(100vh-3.5rem)]">
-          <div className="flex flex-col flex-1 w-full h-full"> {children}</div>
+          <div className="flex flex-col flex-1 w-full h-full"> 
+            <Providers>{children}</Providers>
+            </div>
         <Footer/>
         </main>
         <Toaster/>
