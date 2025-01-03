@@ -6,7 +6,7 @@ import {Rnd} from 'react-rnd'
  import { COLORS, FINISHES, MATERIALS, MODELS } from '@/validators/options'
 import { RadioGroup,Radio,Label, Description} from '@headlessui/react'
  import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { ArrowRight, Check, ChevronsUpDown } from 'lucide-react'
+import { ArrowRight, Check, ChevronsUpDown, Loader2 } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { BASE_PRICE } from '@/prices/product'
 import { useEdgeStore } from '@/lib/edgestore'
@@ -56,6 +56,10 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
 
   const {edgestore} = useEdgeStore()
 
+  const [loading, setLoading] = useState(false)
+
+  
+
 
   const [options, setOptions] = useState<{color:(typeof COLORS)[number]; model:(typeof MODELS.options)[number]; material:(typeof MATERIALS.options)[number]; finish:(typeof FINISHES.options)[number]}>({
     color : COLORS[0],
@@ -85,6 +89,8 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
         width,
         height,
       } = phonecaseRef.current!.getBoundingClientRect();
+
+      setLoading(true)
 
       const { left: containerLeft, top: containerTop } = containerRef.current!.getBoundingClientRect();
 
@@ -261,8 +267,9 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
                 <div className='w-full h-px bg-zinc-300 mt-1 mb-2' />
                  <div className='flex gap-4'>
                   <span className='text-sm text-gray-500'>₹{BASE_PRICE + options.material.price + options.finish.price}</span>
-                  <button onClick={()=>saveConfiguration()} className='w-full bg-green-500 text-sm button-1 rounded-sm text-white flex py-1 items-center justify-center'>continue
-                    <ArrowRight className='h-4 flex items-center' />
+                  <button onClick={()=>saveConfiguration()} className='w-full bg-green-500 text-sm button-1 rounded-sm text-white flex py-1 items-end justify-center'>
+               {  loading?  <><Loader2 className='size-4 animate-spin mr-1.5 flex items-center' /><span>processing</span></> : <><span>continue</span>
+                    <ArrowRight className='h-4 flex items-center' /></>}
                   </button>
                  </div>
                </div>

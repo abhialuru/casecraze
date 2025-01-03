@@ -1,8 +1,10 @@
+ 
 import React from 'react'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import Button from './Button'
 
 async function Navbar() {
 
@@ -33,15 +35,11 @@ async function Navbar() {
                 </Link>
             </button> 
             }
-            <div>
+            
                <div className='w-px h-8 bg-zinc-200' />
-              <button className='flex items-center bg-green-500 text-white p-1 px-2 rounded-lg'>
-                <Link href='/configure/upload'>
-                CreateCase
-                </Link>
-                <ArrowRight className='hidden sm:flex ml-2 size-6 pt-0.5' />
-            </button>
-            </div>
+               <Link href='/configure/upload'>
+            <Button/>
+            </Link>
             </>
           ) : (
             <>
@@ -58,12 +56,9 @@ async function Navbar() {
             </button>
             
             <div className='w-px h-8 bg-zinc-200 hidden md:block' />
-            <button className='md:flex items-center bg-green-500 text-white p-1 px-2 rounded-lg hidden'>
-                <Link href='/configure/upload'>
-                CreateCase
-                </Link>
-                <ArrowRight className='hidden sm:flex ml-2 size-6 pt-0.5' />
-            </button>
+            <Link href='/configure/upload'>
+            <Button/>
+            </Link>
  
             </>
           )}

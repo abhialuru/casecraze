@@ -1,8 +1,10 @@
+ 'use client'
  import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Motion from "@/components/Motion";
 import Phone from "@/components/Phone";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, Check, Loader2, Star } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
  
  
 export default function Home() {
@@ -23,6 +25,12 @@ export default function Home() {
   '/kateramma.jpg',
   '/Batman.jpg',
  ]
+
+     const [loading, setLoading] = useState(false)
+
+     function handleLoading() {
+      setLoading(true)
+     }
 
   return (
     <>
@@ -192,10 +200,10 @@ export default function Home() {
                     </li>
                 </ul>
                 <Link href='/configure/upload' >
-                <div className="flex max-w-fit mx-auto mt-10 items-end bg-green-500 text-sm text-white p-2 px-3 gap-3 rounded-md">
-                      Create your case now
-                      <ArrowRight className="size-4"/>
-                    </div>
+                <button onClick={handleLoading} className="flex w-48 mx-auto mt-10 justify-center items-end bg-green-500 text-sm text-white p-2 px-3 gap-3 rounded-md">
+                { loading ? <> <Loader2 className="size-4 animate-spin"/><span>processing</span></> : <><span> Create your case now</span>
+                      <ArrowRight className="size-4"/></>
+                } </button>
                 </Link>
                
              </div>

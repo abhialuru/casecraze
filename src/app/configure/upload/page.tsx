@@ -52,7 +52,7 @@ function Home() {
 
 
   return (
-    <div className='w-[50vw] h-[60vh] mx-auto flex-1 flex flex-col my-16 px-5'>
+    <div className='md:w-[50vw] w-full h-[60vh] md:mx-auto flex-1 flex flex-col my-16 px-5'>
         <div className={`h-full w-full flex-1 border border-black border-dashed flex justify-center rounded-lg items-center ${isDrag ? 'bg-blue-900/10': 'bg-gray-900/5' }`}>
              <Dropzone
              onDropRejected={onDropRejected}
