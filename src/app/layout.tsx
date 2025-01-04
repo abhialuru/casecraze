@@ -4,6 +4,10 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/components/Providers";
+import { constructMetadata } from "@/lib/utils";
+
+
+export const metadata = constructMetadata()
  
 export default function RootLayout({
   children,

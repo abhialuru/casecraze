@@ -52,7 +52,13 @@ function Home() {
 
 
   return (
+    <>
+    <div className='w-fit p-4 bg-zinc-100 text-sm rounded-md md:mx-20 mt-3 mx-5'>
+      <h3 className='font-semibold'>Step 1 : Add Image</h3>
+      <p>Choose an image for your case.</p>
+    </div>
     <div className='md:w-[50vw] w-full h-[60vh] md:mx-auto flex-1 flex flex-col my-16 px-5'>
+      
         <div className={`h-full w-full flex-1 border border-black border-dashed flex justify-center rounded-lg items-center ${isDrag ? 'bg-blue-900/10': 'bg-gray-900/5' }`}>
              <Dropzone
              onDropRejected={onDropRejected}
@@ -97,6 +103,7 @@ function Home() {
              </Dropzone>
         </div>
     </div>
+    </>
   )
 }
 

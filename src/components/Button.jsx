@@ -17,8 +17,6 @@ function Button() {
         if (pathname.endsWith('/upload')) {
             setLoading(false)      
         }
-        console.log('hello');
-        
     })
 
   return (

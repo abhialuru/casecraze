@@ -149,7 +149,12 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
   }
 
   return (
-    <div className='relative my-10 mx-10 lg:ml-36 md:flex'>
+    <>
+    <div className='w-fit p-4 bg-zinc-100 text-sm rounded-md md:mx-20 my-3 mx-5'>
+      <h3 className='font-semibold'>Step 2 : Customize Design</h3>
+      <p>Make the case yours.</p>
+    </div>
+    <div className='relative mb-10 mx-10 lg:ml-36 md:flex'>
           <div ref={containerRef} className='relative w-full max-w-2xl h-[25rem] overflow-hidden flex justify-center items-center border border-dashed border-black bg-gray-100 rounded-sm p-10'>
                <div className='relative w-44 bg-opacity-50 pointer-events-none aspect-[896/1831]'>
                    <AspectRatio ref={phonecaseRef} className='relative pointer-events-none z-50 aspect-[896/1831] '>
@@ -276,6 +281,7 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
                 </div>  
            
      </div>
+     </>
   )
 }
 

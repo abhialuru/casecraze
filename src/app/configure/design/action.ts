@@ -11,7 +11,6 @@ export type SaveConfigArgs = {
         sessionId : string,
         croppedImageUrl : string
 }
-
  export async function  saveConfig( {
     color,
     finish,
