@@ -42,7 +42,7 @@ export default function Home() {
                 <div className="max-w-lg mx-auto text-center lg:text-start pt-10">
                 <h1 className="text-4xl font-bold tracking-tight text-balance leading-tight">Your Image on a <span className="bg-green-500 text-white">Custom</span> phone case</h1>
                 </div>
-                <p className="my-10 max-w-lg mx-auto text-wrap text-center lg:text-start">Capture your favourite memories with your own,<span className="font-bold">one-of-one</span> phone case. CaseCobra allows you to protect your memories, not just your phone case.</p>
+                <p className="my-10 max-w-lg mx-auto text-wrap text-center lg:text-start">Capture your favourite memories with your own,<span className="font-bold">one-of-one</span> phone case. CaseCraze allows you to protect your memories, not just your phone case.</p>
                 <ul className="max-w-fit mx-auto lg:mx-0 space-y-2">
                     <li className="flex gap-2 items-center">
                     <Check className="size-5 shrink-0 text-green-600" />

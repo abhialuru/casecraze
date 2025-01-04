@@ -16,7 +16,7 @@ async function Navbar() {
     <div className='sticky z-50 w-full bg-white/75 h-12 border top-0 shadow-lg shadow-white border-b border-gray-200 border-blur-lg inset-x-0'>
         <MaxWidthWrapper>
           <div className='w-full h-12 text-sm flex justify-between px-5 items-center' >  
-            <h1 className='text-xl'>i<span className='text-green-600 font-bold'>C</span>ase</h1>  
+            <h1>Case<span className='text-green-600 font-bold'>Craze</span></h1>  
         
       
 
