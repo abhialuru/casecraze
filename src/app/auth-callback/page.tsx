@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Loader2 } from "lucide-react"
 
  
-function page() {
+function Page() {
 
     const[configId, setConfigId] = useState<string | null>(null)
 
@@ -47,4 +47,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
