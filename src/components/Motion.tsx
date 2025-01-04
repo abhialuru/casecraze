@@ -7,7 +7,7 @@ function Motion({images,initialPosition, finalPosition, duration}:{images:Array<
 
     const containerRef = useRef(null)
 
-    const isView = useInView(containerRef, {once: true, amount:0.4})
+      useInView(containerRef, {once: true, amount:0.4})
 
   return (
     <div  ref={containerRef} className='w-full flex flex-col items-center h-full overflow-hidden'> 

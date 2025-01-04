@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
  import LoginModel from '@/components/LoginModel'
  import {useKindeBrowserClient} from '@kinde-oss/kinde-auth-nextjs'
-import { toast, useToast } from '@/hooks/use-toast'
+import {  useToast } from '@/hooks/use-toast'
  
     function DesignPreview({configuration}:{configuration: Configuration}) {
 

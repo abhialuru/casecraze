@@ -1,5 +1,6 @@
 'use client'
 import { Progress } from '@/components/ui/progress';
+import { useToast } from '@/hooks/use-toast';
 import { useEdgeStore } from '@/lib/edgestore';
   import { Image, Loader2, MousePointerSquareDashed } from 'lucide-react';
  import { useRouter } from 'next/navigation';
@@ -9,6 +10,8 @@ import {v4 as uuidv4 } from 'uuid'
 
    
 function Home() {
+
+  const {toast} = useToast()
 
     const[isDrag, setIsDrag] = useState(false)
     const [uploadProgress, setUploadProgress] = useState<number>(0)
@@ -23,7 +26,11 @@ function Home() {
   
       setIsDrag(false)
   
-     alert('error')
+      toast({
+        title: `${file.file.type} type is not supported.`,
+        description: "Please choose a PNG, JPG, or JPEG image instead.",
+        variant: "destructive"
+      })
     }
   
     const onDropAccepted = async (acceptedFiles: File[]) => {
