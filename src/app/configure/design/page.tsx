@@ -13,7 +13,7 @@ interface PropsPage{
 
 async function page({searchParams}: PropsPage) {
 
-     const { url, sessionId } = await searchParams;
+     const { url, sessionId } =  searchParams;
 
     const existingRecord = await db.configuration.findUnique({
       where: {

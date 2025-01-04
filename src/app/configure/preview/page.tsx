@@ -11,7 +11,7 @@ interface PropsType{
 
 async function page({searchParams}: PropsType) {
 
-    const {id} = await searchParams
+    const {id} =  searchParams
 
     if (!id) {
         return notFound()
