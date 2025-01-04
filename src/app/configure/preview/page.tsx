@@ -4,14 +4,12 @@ import DesignPreview from "./DesignPreview"
 
  
 interface PropsType{
-   searchParams: {
-     [key: string]: string | undefined
-   }
+   searchParams: Promise<{ [key: string]: string }> 
 }
 
 async function page({searchParams}: PropsType) {
 
-    const {id} =  searchParams
+    const {id} = await searchParams
 
     if (!id) {
         return notFound()
