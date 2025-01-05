@@ -28,14 +28,16 @@ async function Navbar() {
                 </Link>
             </button>
             {isAdmin &&
+            <>
                 <button className='hover:bg-gray-200 px-2 p-1 rounded-lg'>                
                 <Link href='/dashboard'>
                 Dashboard
                 </Link>
             </button> 
+                           <div className='w-px h-8 bg-zinc-200' /></>
             }
             
-               <div className='w-px h-8 bg-zinc-200' />
+
                <Link href='/configure/upload'>
             <Button/>
             </Link>
