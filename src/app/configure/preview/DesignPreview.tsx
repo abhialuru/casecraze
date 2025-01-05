@@ -83,9 +83,6 @@ import {  useToast } from '@/hooks/use-toast'
          });
          const data = await res.json();
           if (data.isOk) {
-          if (formRef.current) {
-            formRef.current.reset(); // Reset the form fields
-          }
           router.push(`/api/thank-you?orderId=${id}`)            
          } else {
            alert("Payment failed");
