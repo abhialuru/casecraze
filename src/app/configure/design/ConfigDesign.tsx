@@ -120,7 +120,7 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
       const file = new File([blob], 'filename.png', { type: 'image/png' });
  
      const res =  await edgestore.publicFiles.upload({ file });
-    await  saveConfig({ 
+       saveConfig({ 
       sessionId,
         color: options.color.value,
         finish: options.finish.value,
@@ -158,7 +158,7 @@ function ConfigDesign({sessionId, imageUrl, imageDimensions}: ConfigDesignProps)
           <div ref={containerRef} className='relative w-full max-w-2xl h-[25rem] overflow-hidden flex justify-center items-center border border-dashed border-black bg-gray-100 rounded-sm p-10'>
                <div className='relative w-44 bg-opacity-50 pointer-events-none aspect-[896/1831]'>
                    <AspectRatio ref={phonecaseRef} className='relative pointer-events-none z-50 aspect-[896/1831] '>
-                         <NextImage fill alt='iphone' src='/phone-template-white-edges.png' className='z-50 pointer-events-none select-none' />
+                         <NextImage fill alt='iphone' src='/phone-template.png' className='z-50 pointer-events-none select-none' />
                    </AspectRatio>
                    <div className='absolute inset-0 z-40 rounded-[32px] shadow-[0_0_0_99999px_rgba(229,231,235,0.6)]' />
                    <div className={`absolute inset-0 rounded-[32px] bg-${options.color.tw}`} />

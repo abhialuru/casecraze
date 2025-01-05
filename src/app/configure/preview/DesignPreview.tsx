@@ -20,7 +20,7 @@ import {  useToast } from '@/hooks/use-toast'
 
   const {toast} = useToast()
  
-  const {user} = useKindeBrowserClient()
+  const { user } = useKindeBrowserClient()
 
     const [showConfetti, setShowConfetti] = useState(false)
     const [isLoginModel, setIsLoginModel] = useState(false)

@@ -37,13 +37,13 @@ function Page() {
 
 
   return (
-    <div className="max-w-xl mx-auto h-96 flex justify-center items-center">
-        <div className="flex flex-col  gap-2 text-center">
-            <Loader2 className="size-10 animate-spin" />
-            <h3 className="text-2xl font-semibold text-zinc-800">Logging...</h3>
-            <p>Redirecting, please wait.</p>
-        </div>
-     </div>
+    <div className='w-full mt-24 flex justify-center'>
+    <div className='flex flex-col items-center gap-2'>
+      <Loader2 className='h-8 w-8 animate-spin text-zinc-500' />
+      <h3 className='font-semibold text-xl'>Logging you in...</h3>
+      <p>You will be redirected automatically.</p>
+    </div>
+  </div>
   )
 }
 
