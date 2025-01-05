@@ -2,6 +2,7 @@
   "name": "custom-case",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://casecraze-9yzl.vercel.app",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
