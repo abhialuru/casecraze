@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 // Initialize the CORS middleware
 const cors = Cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow specific HTTP methods
-  origin: '*', // Set to '*' for all domains or specify your domain e.g. 'https://casecraze-9yzl.vercel.app'
+  origin: 'https://casecraze-9yzl.vercel.app', // Set to '*' for all domains or specify your domain e.g. 'https://casecraze-9yzl.vercel.app'
 });
 
 // Helper function to run the middleware
