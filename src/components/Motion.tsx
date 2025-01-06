@@ -19,7 +19,7 @@ function Motion({images,initialPosition, finalPosition, duration}:{images:Array<
             repeat: Infinity,
             ease: 'linear'
          }}
-         style={{ willChange : 'transform'}}
+         style={{ willChange : 'transform'} as React.CSSProperties}
     >
      
         {images.map((item, i)=>
@@ -36,7 +36,7 @@ function Motion({images,initialPosition, finalPosition, duration}:{images:Array<
             repeat: Infinity,
             ease: 'linear'
          }}
-         style={{ willChange : 'transform'}}
+         style={{ willChange : 'transform'} as React.CSSProperties}
     >    
  
         {images.map((item, i)=>

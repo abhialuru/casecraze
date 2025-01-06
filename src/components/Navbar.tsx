@@ -11,6 +11,9 @@ async function Navbar() {
   const user = await getUser()
    const isAdmin = user?.email === process.env.ADMIN_EMAIL
 
+   console.log(user);
+   
+
   return (
     <div className='sticky z-50 w-full bg-white/75 h-12 border top-0 shadow-lg shadow-white border-b border-gray-200 border-blur-lg inset-x-0'>
         <MaxWidthWrapper>
