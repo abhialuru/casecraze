@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     return [
       {
         // Apply these headers to all routes
-        source: '/api/:path*',  // Apply CORS headers to API routes
+        source: '/api/auth/[KindeAuth]',  // Apply CORS headers to API routes
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
