@@ -1,14 +1,15 @@
-import {handleAuth} from "@kinde-oss/kinde-auth-nextjs/server";
-import { NextResponse } from "next/server";
+import { handleAuth } from "@kinde-oss/kinde-auth-nextjs/server";
 
+// Allow handling of OPTIONS requests (preflight)
+export async function OPTIONS(req:any, res:any) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS, POST, PUT, DELETE, PATCH');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization, X-Api-Version');
+  res.status(200).end(); // Respond with 200 OK
+}
+
+// Your main GET handler for authentication
 export const GET = handleAuth();
 
-export async function POST(req: Request) {
-    try {
-       const response = await handleAuth(req); // Handle the auth for POST requests if needed
-  
-       return NextResponse.json({ message: 'Logged out successfully' }, { status: 200 });
-    } catch (error) {
-      return NextResponse.json({ error: console.error()}, { status: 500 });
-    }
-  }
+
+ 
