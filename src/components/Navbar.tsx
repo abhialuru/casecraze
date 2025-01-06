@@ -8,7 +8,6 @@ import Button from './Button'
 async function Navbar() {
 
   const { getUser } = getKindeServerSession()
-  
   const user = await getUser()
 
    const isAdmin = user?.email === process.env.ADMIN_EMAIL
