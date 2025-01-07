@@ -15,9 +15,7 @@ import Script from 'next/script'
 
   const router = useRouter()
 
-  console.log('user check : ', userCheck)
-  
-
+   
   const { sessionId } = configuration
 
   const {toast} = useToast()
