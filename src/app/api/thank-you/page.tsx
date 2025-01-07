@@ -18,8 +18,8 @@ function page() {
                 THANK YOU FOR REACHING OUT TO US!
             </h1>
             <div className='flex flex-col mt-10 text-sm font-semibold' >
-            <p>Your order is succesfully placed!</p>
-            <p>We will deliver it to you ASAP</p>
+            <p>Your order has been successfully placed!</p>
+            <p>We're currently processing it and will deliver it to you ASAP.</p>
             </div>
         </div>
     </div>

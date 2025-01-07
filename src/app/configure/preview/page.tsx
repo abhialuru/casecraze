@@ -1,6 +1,8 @@
+'use server'
 import { db } from "@/db"
 import { notFound } from "next/navigation"
 import DesignPreview from "./DesignPreview"
+import { currentUser } from "@clerk/nextjs/server"
 
  
 interface PropsType{
@@ -10,6 +12,11 @@ interface PropsType{
 async function page({searchParams}: PropsType) {
 
     const {id} = await searchParams
+
+    const user = await currentUser()
+    const userCheck = user ? user.id : "";
+    
+
 
     if (!id) {
         return notFound()
@@ -30,7 +37,7 @@ async function page({searchParams}: PropsType) {
 
   return (
  
-        <DesignPreview configuration={configuration} />
+        <DesignPreview  userCheck={userCheck} configuration={configuration} />
  
   )
 }

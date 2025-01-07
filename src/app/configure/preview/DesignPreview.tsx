@@ -9,18 +9,20 @@ import { useEffect, useRef, useState } from 'react'
  import { useRouter } from 'next/navigation'
 import Script from 'next/script'
  import LoginModel from '@/components/LoginModel'
- import {useKindeBrowserClient} from '@kinde-oss/kinde-auth-nextjs'
-import {  useToast } from '@/hooks/use-toast'
- 
-    function DesignPreview({configuration}:{configuration: Configuration}) {
+ import {  useToast } from '@/hooks/use-toast'
+    
+    function DesignPreview({configuration, userCheck}:{configuration: Configuration, userCheck: string | null}) {
 
   const router = useRouter()
+
+  console.log('user check : ', userCheck)
+  
 
   const { sessionId } = configuration
 
   const {toast} = useToast()
  
-  const { user } = useKindeBrowserClient()
+ 
 
     const [showConfetti, setShowConfetti] = useState(false)
     const [isLoginModel, setIsLoginModel] = useState(false)
@@ -67,11 +69,8 @@ import {  useToast } from '@/hooks/use-toast'
          key: process.env.PUBLIC_NEXT_RAZORPAY_KEY_ID,
          order_id: data.id,
          name: 'Your custom case',
-          
-         
-
-        
-      handler: async function (response: any) {
+             
+        handler: async function (response: any) {
          // verify payment
          const res = await fetch("/api/verifyOrder", {
            method: "POST",
@@ -95,23 +94,22 @@ import {  useToast } from '@/hooks/use-toast'
    }
 
          async function handleCheckout() {
+          setIsLoading(false)
           if (!formValid) {
-            toast({
-              title: 'Address required',
-              description: 'Please fill the shipping address before you checkout.'
-            })
-          }else{
-            setIsLoading(true)
-            if (user) {
-              await  handleOrder({amount: totalPrice})
+            setIsLoading(false)
+              toast({
+                title: 'Shipping Address Required',
+                description: 'Please enter your shipping address to proceed with your order.'
+              })
+          }else
+          if(userCheck){
               setIsLoading(false)
+              await handleOrder({amount: totalPrice})
             }else{
               localStorage.setItem('configurationId', sessionId)
               setIsLoginModel(true)
                setIsLoading(false)
-              
             }
-          }
           }
    
 

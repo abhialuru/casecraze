@@ -2,17 +2,19 @@
 import React from 'react'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import Link from 'next/link'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import Button from './Button'
-
+ import Button from './Button'
+import { currentUser } from '@clerk/nextjs/server';
+import { SignOutButton } from '@clerk/nextjs';
+ 
 async function Navbar() {
 
-  const { getUser } = getKindeServerSession()
-  const user = await getUser()
+  // const { getUser } = getKindeServerSession()
+  // const user = await getUser()
 
-   const isAdmin = user?.email === process.env.ADMIN_EMAIL
+  const user = await currentUser()
+
+   const isAdmin = user?.emailAddresses === process.env.ADMIN_EMAIL
  
-   
   return (
     <div className='sticky z-50 w-full bg-white/75 h-12 border top-0 shadow-lg shadow-white border-b border-gray-200 border-blur-lg inset-x-0'>
         <MaxWidthWrapper>
@@ -24,11 +26,11 @@ async function Navbar() {
 <div className='flex items-center gap-2'>
           {user ? (
             <>
+            <SignOutButton>
             <button className='hover:bg-gray-200 px-2 p-1 rounded-lg'>
-                <Link href='/api/auth/logout'>
-                signout
-                </Link>
+             signout
             </button>
+            </SignOutButton>
             {isAdmin &&
             <>
                 <button className='hover:bg-gray-200 px-2 p-1 rounded-lg'>                
@@ -36,7 +38,7 @@ async function Navbar() {
                 Dashboard
                 </Link>
             </button> 
-                           <div className='w-px h-8 bg-zinc-200' /></>
+              <div className='w-px h-8 bg-zinc-200' /></>
             }
             
 
@@ -47,13 +49,13 @@ async function Navbar() {
           ) : (
             <>
             <button className='hover:bg-gray-200 px-2 p-1 rounded-lg'>
-                <Link href='/api/auth/register'>
+                <Link href='/sign-up'>
                 signup
                 </Link>
             </button>
 
             <button className='hover:bg-gray-200 px-2 p-1 rounded-lg'>
-                <Link href='/api/auth/login'>
+                <Link href='/sign-in'>
                    Login
                 </Link>
             </button>

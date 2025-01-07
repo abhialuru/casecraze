@@ -2,6 +2,8 @@ import type { Dispatch, SetStateAction } from 'react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog'
 import Image from 'next/image'
 import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+import { SignIn } from '@clerk/nextjs'
+import Link from 'next/link'
 
 function LoginModel(
     {isOpen, setIsOpen}:{
@@ -25,12 +27,12 @@ function LoginModel(
             </DialogHeader>
             
                <div className='grid grid-cols-2 divide-x gap-5 font-mono'>
-                <LoginLink className='py-1 bg-zinc-100 border text-center rounded-md'>
+                <Link href='/sign-in' className='py-1 bg-zinc-100 border text-center rounded-md'>
                     Login
-                </LoginLink>
-                <RegisterLink className='py-1 bg-green-500 text-white border text-center rounded-md'>
+                </Link>
+                <Link href='/sign-up' className='py-1 bg-green-500 text-white border text-center rounded-md'>
                     signup
-                </RegisterLink>
+                </Link>
                </div>
           </DialogContent>
       </Dialog> 
