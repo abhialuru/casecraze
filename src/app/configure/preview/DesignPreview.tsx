@@ -67,19 +67,20 @@ import Script from 'next/script'
          key: process.env.PUBLIC_NEXT_RAZORPAY_KEY_ID,
          order_id: data.id,
          name: 'Your custom case',
+         callback_url: `/api/thank-you?orderId=${id}`,
              
-        handler: async function (response: any) {
-         // verify payment
-        //  const res = await fetch("/api/verifyOrder", {
-        //    method: "POST",
-        //  });
-         const data = await res.json();
-          if (data.isOk) {
-          router.push(`/api/thank-you?orderId=${id}`)            
-         } else {
-           alert("Payment failed");
-         }
-       },
+      //   handler: async function (response: any) {
+      //    // verify payment
+      //   //  const res = await fetch("/api/verifyOrder", {
+      //   //    method: "POST",
+      //   //  });
+      //    const data = await res.json();
+      //     if (data.isOk) {
+      //     router.push(`/api/thank-you?orderId=${id}`)            
+      //    } else {
+      //      alert("Payment failed");
+      //    }
+      //  },
        };
       const payment = new (window as any).Razorpay(paymentData);
       payment.open()

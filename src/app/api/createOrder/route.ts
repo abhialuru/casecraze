@@ -9,7 +9,6 @@ const razorpay = new Razorpay({
   
   export async function POST(req: Request) {
 
-    
     const { amount } = await req.json();
      
     const order = await razorpay.orders.create({
@@ -17,6 +16,5 @@ const razorpay = new Razorpay({
       currency: "INR",
     });
 
-    
     return NextResponse.json(order);
   }
