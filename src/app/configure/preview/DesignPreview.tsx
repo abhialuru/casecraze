@@ -22,8 +22,6 @@ import Script from 'next/script'
 
   const {toast} = useToast()
  
- 
-
     const [showConfetti, setShowConfetti] = useState(false)
     const [isLoginModel, setIsLoginModel] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -72,14 +70,9 @@ import Script from 'next/script'
              
         handler: async function (response: any) {
          // verify payment
-         const res = await fetch("/api/verifyOrder", {
-           method: "POST",
-           body: JSON.stringify({
-             orderId: response.razorpay_order_id,
-             razorpayPaymentId: response.razorpay_payment_id,
-             razorpaySignature: response.razorpay_signature,
-           }),
-         });
+        //  const res = await fetch("/api/verifyOrder", {
+        //    method: "POST",
+        //  });
          const data = await res.json();
           if (data.isOk) {
           router.push(`/api/thank-you?orderId=${id}`)            

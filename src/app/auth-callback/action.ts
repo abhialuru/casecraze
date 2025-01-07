@@ -8,7 +8,6 @@ export const getAuthStatus = async () => {
 
   const user = await currentUser()
   
-
   if (!user?.id || !user.emailAddresses) {
     throw new Error('Invalid user data')
   }

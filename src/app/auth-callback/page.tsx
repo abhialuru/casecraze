@@ -5,8 +5,9 @@ import { useEffect, useState } from 'react'
 import { getAuthStatus } from './action'
 import { useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
+ 
+const Page = async () => {
 
-const Page = () => {
   const [configId, setConfigId] = useState<string | null>(null)
   const router = useRouter()
 
