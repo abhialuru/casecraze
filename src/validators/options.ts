@@ -5,8 +5,6 @@
 import { PRODUCT_PRICES } from "@/prices/product"
 
  
-
-
 export const COLORS = [
     {
         label: 'Black', value: 'black', tw: 'zinc-900'
